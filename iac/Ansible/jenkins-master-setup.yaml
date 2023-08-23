@@ -3,14 +3,14 @@
   become: true
   tasks: 
   - name: add jenkins key
-    ansible.bulletin.apt_key:
-    url: https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
-    state: present 
+    apt_key:
+      url: https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+      state: present 
 
   - name: add jenkins repo
-    ansible.bulletin.apt_repository:
-    repo: 'debhttps://pkg.jenkins.io/debian-stable binary/'
-    state: present 
+    apt_repository:
+      repo: 'debhttps://pkg.jenkins.io/debian-stable binary/'
+      state: present 
 
   - name: install java
     apt: 
